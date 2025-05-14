@@ -1602,7 +1602,7 @@ impl NockStack {
         }
     }
 
-    /// Push onto an east-oriented ligthweight stack, moving the stack_pointer
+    /// Push onto an east-oriented lightweight stack, moving the stack_pointer
     unsafe fn push_east<T>(&mut self) -> *mut T {
         let words = word_size_of::<T>();
         self.alloc_would_oom_(
@@ -1859,7 +1859,7 @@ impl NockStack {
      *
      * The below functions are useful for debugging NockStack issues.
      *
-     * Walk down the NockStack, printing frames. Absolutely no safety checks are peformed, as the
+     * Walk down the NockStack, printing frames. Absolutely no safety checks are performed, as the
      * purpose is to discover garbage data; just print pointers until the bottom of the NockStack
      * (i.e. a null frame pointer) is encountered. Possible to crash, if a frame pointer gets
      * written over.
